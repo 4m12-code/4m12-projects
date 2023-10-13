@@ -1,0 +1,151 @@
+*{
+    border-radius: 1vw;
+}
+body{ /*Se ve mejor en pantallas de 1366x768*/
+    background-color: black;
+    margin: 0;
+    background-image: url(img/Chrysanthemum.jpg);
+    width: 100vw;
+    height: 100vh;
+}
+.opacity{
+    
+    box-sizing: border-box;
+    padding: 4vw 3vw 2vw 3vw; 
+    backdrop-filter: blur(15px);
+    height: 100vh;
+}
+.opacity h1{
+    background-color: white;
+    text-align: center;
+    margin-top: -3.5vw;
+    margin-bottom: 1vw;
+}
+/*============================================================================================*/
+body .img-general{ /*Div parte superior imgen y descripción */
+    
+    box-sizing: border-box;
+    height: 38vw;
+    display: flex; 
+    backdrop-filter: blur(5px);
+}
+body .img-general .img-view{ /*Div izq imagen grande*/
+    background-color: white;/*Quitar*/
+    width: 60%;
+    height:100%;
+    box-shadow: 0 5px 5px rgba(1, 23, 46, 0.6);
+    overflow: hidden;
+    object-fit: cover;
+    border-color: white;
+    border-width: 1px;
+    border-style: solid;
+}
+body .img-general .img-view img{
+    width: 100%;
+    height: 100%;
+}
+body .img-description{ /*div der descripción de imagen*/
+    border-color: white;
+    border-width: 1px;
+    border-style: solid;
+    width: 40%;
+    height: 100%;
+    margin-left: 1vw;
+    box-shadow: 0 5px 5px rgba(1, 23, 46, 0.6);
+}
+body .img-description h2{ /*Titulo*/
+    font-size: 3vw;
+    margin: 2vw;
+    background-color: rgb(255, 255, 255);
+    opacity: none;
+    text-align: center;
+}
+body .img-description div{
+    max-height: 29vw;
+    overflow-y: hidden;
+    height: 100%;
+}
+body .img-description p{ /*Párrafo*/
+    text-align: justify;
+    padding-bottom: 1vw;
+    background-color: white;
+    margin: 1vw;
+    height: auto;
+    padding: 1vw;
+    font-size: 2vw;
+}
+
+/*============================================================================================*/
+
+body .contenedor .contenido{
+    box-sizing: border-box;
+    margin: auto;
+    width: 100%;
+    height:100%;
+    display: flex;
+    overflow-x: hidden; /*Solo cambiando a hidde, se arregla el error del scroll*/
+    scroll-snap-type: mandatory;
+}
+
+body .contenedor .contenido img{
+    user-select: none; /*No seleccionar la image*/
+    -webkit-user-drag: none; /*No arrastrar la imagen*/
+    margin: 2vw 1vw 0 1vw;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 13vw;
+    height:80%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(253, 253, 253);
+    transition: .3s; /*Tiempo de transicion*/
+}
+body .contenedor .contenido img:first-child{
+    margin-left: 0;
+}
+body .contenedor .contenido img:last-child{
+    margin-right: 0;
+}
+body .contenedor .contenido img:hover{
+    margin-top: 1vw;
+    border-color: blue;
+    border-width: 2px;
+    border-style: solid; 
+}
+
+.active{
+    box-shadow: 0 5px 5px rgba(1, 23, 46, 0.6); /*Sombra Paralela*/
+}
+/*============================================================================================*/
+@media(max-width:768px){
+    body .contenedor .contenido{
+        overflow-y: hidden;
+        overflow-x: scroll; /*Solo cambiando a hidde, se arregla el error del scroll*/
+    }
+    body .img-general{ /*Div parte superior imgen y descripción */
+        width: 94vw;
+        height: 160vw;
+        display: block;
+    }
+    body .img-general .img-view{ /*Div izq imagen grande*/
+        width: 100%;
+        height: 50vh;
+        margin-bottom: 2vw;
+        
+    }
+    body .img-general .img-view img{
+        object-fit: cover; /*Para que la imagen no se deforme, se pierde un poco los bordes*/
+    }
+    body .img-description{ /*div der descripción de imagen*/
+        width: 94vw;
+        margin-left: 0;
+        height: 30vh;
+        
+    }
+    body .img-description h2{ /*Titulo*/
+        font-size: 5vh;
+    }
+    body .img-description p{ /*Párrafo*/
+        font-size: 2vh;
+    }
+}
